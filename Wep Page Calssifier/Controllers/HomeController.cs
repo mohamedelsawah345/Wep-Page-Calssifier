@@ -101,28 +101,41 @@ namespace Wep_Page_Calssifier.Controllers
 
         public IActionResult TextAfterSorted_Buble()
         {
-         BubleSorting result = new BubleSorting();
+            Stopwatch stopwatch = new Stopwatch();
+           
+            BubleSorting result = new BubleSorting();
 
          DetermineCategory category = new DetermineCategory();
-           
-            
 
-           var TopResult= result.Text_after_sort_Buble(_Text);
+           
+            stopwatch.Start();
+            var TopResult= result.Text_after_sort_Buble(_Text);
+             stopwatch.Stop();
+            var Time = (stopwatch.ElapsedMilliseconds).ToString();
+            ViewBag.Time = Time;
+
+            ViewBag.TopResult = TopResult;
             
             ViewBag.Message = category.GetCategory(TopResult);
+           
             return View();
         }
 
 
         public IActionResult TextAfterSorted_Insertion()
         {
+            Stopwatch stopwatch = new Stopwatch();
             InsertionSort result = new InsertionSort();
 
             DetermineCategory category = new DetermineCategory();
 
-
+            stopwatch.Start();
 
             var TopResult = result.Text_after_sort_Insertion(_Text);
+            stopwatch.Stop();
+            var Time = (stopwatch.ElapsedMilliseconds).ToString();
+            ViewBag.Time = Time;
+            ViewBag.TopResult = TopResult;
 
             ViewBag.Message = category.GetCategory(TopResult);
             return View();
@@ -132,12 +145,17 @@ namespace Wep_Page_Calssifier.Controllers
 
         public IActionResult TextAfterSorted_Quick()
         {
+            Stopwatch stopwatch = new Stopwatch();
             QuickSort result = new QuickSort();
             DetermineCategory category = new DetermineCategory();
 
 
-
+            stopwatch.Start();
             var TopResult = result.Text_after_sort_Quick(_Text);
+            stopwatch.Stop();
+            var Time = (stopwatch.ElapsedMilliseconds).ToString();
+            ViewBag.Time = Time;
+            ViewBag.TopResult = TopResult;
 
             ViewBag.Message = category.GetCategory(TopResult);
             return View();
@@ -147,14 +165,19 @@ namespace Wep_Page_Calssifier.Controllers
 
         public IActionResult TextAfterSorted_Merge()
         {
+            Stopwatch stopwatch = new Stopwatch();
             MergeSort result = new MergeSort();
 
             DetermineCategory category = new DetermineCategory();
 
 
-
+            stopwatch.Start();
             var TopResult = result.Text_after_sort_Merge(_Text);
+            stopwatch.Stop();
+            var Time = (stopwatch.ElapsedMilliseconds).ToString();
+            ViewBag.Time = Time;
 
+            ViewBag.TopResult = TopResult;
             ViewBag.Message = category.GetCategory(TopResult);
             return View();
         }
@@ -164,14 +187,19 @@ namespace Wep_Page_Calssifier.Controllers
 
         public IActionResult TextAfterSorted_SelectionSort()
         {
+            Stopwatch stopwatch = new Stopwatch();
             SelectionSort result = new SelectionSort();
 
             DetermineCategory category = new DetermineCategory();
 
 
-
+            stopwatch.Start();
             var TopResult = result.Text_after_sort_Selection(_Text);
+            stopwatch.Stop();
+            var Time = (stopwatch.ElapsedMilliseconds).ToString();
+            ViewBag.Time = Time;
 
+            ViewBag.TopResult = TopResult;
             ViewBag.Message = category.GetCategory(TopResult);
             return View();
         }

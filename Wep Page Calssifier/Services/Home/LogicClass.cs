@@ -13,10 +13,10 @@ namespace Wep_Page_Calssifier.Services.Home
     {
 
 
-        public static HashSet<string> LoadWordsFromFile(string Text)
+        public static HashSet<string> LoadWordsFromFile(string Path)
         {
             // قراءة محتويات الملف
-            string wordsString = Text;
+            string wordsString = File.ReadAllText(Path); 
 
             // تقسيم النص إلى قائمة باستخدام الفاصلة كفاصل
             List<string> wordsList = wordsString.Split(',').ToList();
@@ -30,6 +30,8 @@ namespace Wep_Page_Calssifier.Services.Home
         public static HashSet<string> Stoping_Words()
         {
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Files", "TextFile", "common-english-words.txt");
+
+
 
 
             // طريقة الاستخدام

@@ -1,4 +1,5 @@
-﻿using Wep_Page_Calssifier.Services.Home;
+﻿using System.Diagnostics;
+using Wep_Page_Calssifier.Services.Home;
 
 namespace Wep_Page_Calssifier.Services.AlgorithmSorting
 {
@@ -37,11 +38,12 @@ namespace Wep_Page_Calssifier.Services.AlgorithmSorting
             return items;
         }
 
+        
         public  List<Tuple<string, int>> Text_after_sort_Buble(string Text)
         {
-
+           
             return BubbleSort(WordAndGetRedundancies(Text));
-
+           
 
         }
 

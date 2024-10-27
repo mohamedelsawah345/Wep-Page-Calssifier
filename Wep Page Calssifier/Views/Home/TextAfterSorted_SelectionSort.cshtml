@@ -83,18 +83,17 @@
                 <div class="read_text"><a href="#DataOfBody">  @ViewBag.Message  </a></div>
             </div>
 
+            <div class="read_bt">
+                <div class="read_text"><a href="#DataOfBody">Time is : @ViewBag.Time MS </a></div>
+            </div>
         </div>
     </div>
     <!--banner section end -->
-    <!--about section start -->
-    <div class="about_section">
-        <div class="container">
-            <h1 class="about_text">about Web Pages Classifier</h1>
-            <p class="lorem_text">Every search engine has something called a crawler that takes the pages and starts classifying them (sports - art - economics - etc.). Currently, it works with AI, but we want to do it in the classic way, which is that the crawler crawls on the page and reads all the words on it except stopping words. He counts each word repeated how many times on the page, sorts them descendingly, and based on the first 3 or 4 words repeated, he can determine the type of page. </p>
+    @foreach (var item in @ViewBag.TopResult)
+    {
+        <h1>     @item     </h1>
 
-        </div>
-    </div>
-    <!--about section end -->
+    }
     <!--footer section start -->
     <!--footer section end -->
     <!--copyright section start -->
