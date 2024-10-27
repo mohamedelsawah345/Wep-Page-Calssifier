@@ -1,0 +1,32 @@
+﻿ @using Wep_Page_Calssifier.Models
+ @model UploadFile
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+   
+       
+ <!--  Input File Start  -->
+<form asp-action="Index" asp-controller="Home" method="post" enctype="multipart/form-data">
+    
+
+
+    <div class="form-group">
+        <label for="inputGroupFile02">Choose file </label>
+        <input asp-for="formFile" type="file" class="form-control" id="inputGroupFile02" placeholder="Choose file">
+        <span class="text-danger" asp-validation-for="formFile">   </span>
+
+    </div>
+
+   
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+
+     <!-- Input File End -->
+    
+

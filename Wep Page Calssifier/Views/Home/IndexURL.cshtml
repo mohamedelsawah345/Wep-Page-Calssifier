@@ -1,0 +1,31 @@
+﻿ @using Wep_Page_Calssifier.Models
+ @model UploadURL
+
+
+@{
+    Layout = "_LayoutURL.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<!--  Input File Start  -->
+<form asp-action="IndexURL" asp-controller="Home" method="post" enctype="multipart/form-data">
+
+
+
+    
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">URL</label>
+        <input asp-for="URL" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter URL Wep Page">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- Input File End -->
